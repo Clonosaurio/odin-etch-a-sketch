@@ -42,3 +42,14 @@ function addPixelsListener(){
         })
     });
 }
+
+let reset = document.querySelector(".reset");
+reset.addEventListener("click", () => {
+    drawScreen()
+});
+
+let screenSize = document.querySelector(".grid-size");
+screenSize.addEventListener("click", () => {
+    size = screenSize.valueAsNumber;
+    drawScreen()
+});

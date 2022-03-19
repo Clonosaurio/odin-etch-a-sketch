@@ -26,6 +26,7 @@ body {
 
 .menu {
     display: flex;
+    flex-flow: column;
     flex: 0 0 auto;
     border: 5px outset rgb(150, 0, 0);
     width: 100px;
@@ -40,6 +41,11 @@ body {
 .menu.right {
     border-radius: 0 20px 20px 0;
     margin-left: auto;
+}
+
+.menu > button,
+.menu > input {
+    margin: 10px;
 }
 
 a {
@@ -83,12 +89,13 @@ a {
     display: flex;
     flex: auto;
     /*box-shadow: inset 0 0 1px rgb(200, 200, 100);*/
-    border: 1px solid rgb(200, 200, 100);
-    background-color: wheat;
+    border: 1px solid rgb(240, 240, 240);
+    background-color: white;
 }
 
 .pixel.active {
     background-color: black;
+    border: 1px solid black;
 }
 
 ** {
