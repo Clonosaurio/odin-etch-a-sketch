@@ -20,14 +20,14 @@ body {
     align-items: stretch;
     border-radius: 28px;
     padding: 20px;
-    box-shadow: inset 0 0 20px rgb(20, 0, 0);
+    box-shadow: inset -1px -2px 20px rgb(20, 0, 0);
     background-color: red;
 }
 
 .menu {
     display: flex;
     flex: 0 0 auto;
-    border: 5px outset rgb(100, 0, 0);
+    border: 5px outset rgb(150, 0, 0);
     width: 100px;
     box-shadow: inset 0 0 10px black;
 }
@@ -42,6 +42,11 @@ body {
     margin-left: auto;
 }
 
+a {
+    text-decoration: none;
+    margin: 20px 0 0 0;
+}
+
 .text {
     display: flex;
     width: 70px;
@@ -50,7 +55,7 @@ body {
     writing-mode: vertical-rl;
     font-size: 60px;
     justify-content: center;
-    text-shadow: 1px 2px 3px rgb(100, 0, 0);
+    text-shadow: 1px 3px 5px rgb(150, 0, 0);
     color: rgb(100, 0, 0);
 }
 
@@ -62,8 +67,8 @@ body {
 .screen {
     display: flex;
     flex: 0 0 auto;
-    width: 400px;
-    height: 400px;
+    width: 500px;
+    height: 500px;
     border: 3px outset rgb(100, 0, 0);
     box-shadow: inset 0 0 10px black;
     justify-content: stretch;
@@ -77,8 +82,12 @@ body {
 .pixel {
     display: flex;
     flex: auto;
-    box-shadow: inset 0 0 1px black;
+    box-shadow: inset 0 0 1px rgb(200, 200, 100);
     background-color: wheat;
+}
+
+.pixel.active {
+    background-color: black;
 }
 
 ** {
