@@ -65,8 +65,20 @@ body {
     width: 400px;
     height: 400px;
     border: 3px outset rgb(100, 0, 0);
-    /*margin: 0px 10px;*/
     box-shadow: inset 0 0 10px black;
+    justify-content: stretch;
+}
+
+.column {
+    display: flex;
+    flex: auto;
+}
+
+.pixel {
+    display: flex;
+    flex: auto;
+    box-shadow: inset 0 0 1px black;
+    background-color: wheat;
 }
 
 ** {
