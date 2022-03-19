@@ -5,6 +5,18 @@ let size = 15;
 drawScreen()
 
 function drawScreen(){
+    clearScreen();
+    drawPixels();
+    addPixelsListener();
+}
+
+function clearScreen(){
+    while(screen.hasChildNodes()){
+        screen.removeChild(screen.firstChild)
+    }
+}
+
+function drawPixels(){
     for(let i = 0; i < size; i++){
         let column = document.createElement("div");
         column.className = `column`;
@@ -22,9 +34,11 @@ function drawScreen(){
     }
 }
 
-let pixel = document.querySelectorAll(".pixel");
-pixel.forEach(px => {
-    px.addEventListener("mousedown", () => {
+function addPixelsListener(){
+    let pixel = document.querySelectorAll(".pixel");
+    pixel.forEach(px => {
+        px.addEventListener("mousedown", () => {
         px.classList.add("active");
-    })
-});
+        })
+    });
+}

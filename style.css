@@ -82,7 +82,8 @@ a {
 .pixel {
     display: flex;
     flex: auto;
-    box-shadow: inset 0 0 1px rgb(200, 200, 100);
+    /*box-shadow: inset 0 0 1px rgb(200, 200, 100);*/
+    border: 1px solid rgb(200, 200, 100);
     background-color: wheat;
 }
 
