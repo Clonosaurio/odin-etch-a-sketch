@@ -30,6 +30,7 @@ And some personal things I want to add, but not promised:
 - ❌ zoom levels for the screen
 - ❌ toggle button to change toy's visibility
 - ❌ frame by frame animation
+- ✅ toggle button for grid visibility
 
 
 # How it's going
@@ -38,4 +39,7 @@ And some personal things I want to add, but not promised:
 It's working now! Still needs more work, but I managed to make it show a screen with "pixels" that change color to black once clicked. I'm surprised how I managed to do it, I barely had to search for a few DOM methods. Now it's time to make it more interesting.
 
 ## update 2
-now it's possible to restart the toy's screen. Screen resolution can also be adjusted.
+Now it's possible to restart the toy's screen. Screen resolution can also be adjusted.
+
+## update 3
+Now the grid visibility can be toggled. It keeps it's setting enabled or disabled after cleaning the screen or changing resolution. This wasn't part of the roadmap, but now it is, with a check mark of complete!
