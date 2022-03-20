@@ -8,6 +8,7 @@ drawScreen()
 function drawScreen(){
     clearScreen();
     drawPixels();
+    checkGridVisibility();
     addPixelsListener();
 }
 
@@ -44,6 +45,20 @@ function addPixelsListener(){
     });
 }
 
+function checkGridVisibility(){
+    if(gridVisible){
+        let drawnPixels = document.querySelectorAll(".pixel");
+    drawnPixels.forEach(pixel => {
+        pixel.classList.add("noBorder");
+    });
+    } else {
+        let drawnPixels = document.querySelectorAll(".pixel");
+        drawnPixels.forEach(pixel => {
+            pixel.classList.remove("noBorder");
+        });
+    }
+}
+
 //redraw the screen, deleting anything drawn
 let btnReset = document.querySelector(".reset");
 btnReset.addEventListener("click", () => drawScreen());
@@ -59,11 +74,21 @@ btnGridSize.addEventListener("click", () => {
 //toggle grid visibility
 let btnGrid = document.querySelector(".grid");
 btnGrid.addEventListener("click", () => {
-    let drawnPixels = document.querySelectorAll(".pixel");
+    if(gridVisible){
+        let drawnPixels = document.querySelectorAll(".pixel");
     drawnPixels.forEach(pixel => {
-        pixel.classList.toggle("noBorder");
+        pixel.classList.remove("noBorder");
+        gridVisible = false;
     });
+    } else {
+        let drawnPixels = document.querySelectorAll(".pixel");
+        drawnPixels.forEach(pixel => {
+            pixel.classList.add("noBorder");
+            gridVisible = true;
+        });
+    }
 });
+
 
 
 
