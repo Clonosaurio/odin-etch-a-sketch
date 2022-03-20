@@ -12,23 +12,30 @@ This time I'm going to make an _etch-a-sketch_, something like the good old MS-P
 
 ### https://clonosaurio.github.io/odin-etch-a-sketch/
 
-***
+# roadmap
 
-### Update 1
-It's working now! Still needs more work, but I managed to make it show a screen with "pixels" that change color to black once clicked. I'm surprised how I managed to do it, I barely had to search for a few DOM methods.
-
-Now it's time to make it more interesting, I have a few more things to do to complete this exercise:
-- `"mousedrag"` must be able to draw too
-- color picker
-- a way to clear the toy's screen
-- random colors
-- screen resolution (grid size)
+Things to do to complete this exercise:
+- ❌ color picker
+- ✅ a way to clear the toy's screen
+- ❌ random colors
+- ✅ screen resolution (grid size)
 
 And some personal things I want to add, but not promised:
-- a filling tool
-- different brush sizes and shapes
-- a fake dynamic shadow using the mouse position on the window
-- replacing the toy's html+css with images for better performance (too much box-shadows)
-- save/load system
-- zoom levels for the screen
-- toggle button to change toy's visibility
+- ❌ `"mousedrag"` must be able to draw too
+- ❌ a filling tool
+- ❌ different brush sizes and shapes
+- ❌ a fake dynamic shadow using the mouse position on the window
+- ❌ replacing the toy's html+css with images for better performance (too much box-shadows)
+- ❌ save/load system
+- ❌ zoom levels for the screen
+- ❌ toggle button to change toy's visibility
+- ❌ frame by frame animation
+
+
+# How it's going
+
+## Update 1
+It's working now! Still needs more work, but I managed to make it show a screen with "pixels" that change color to black once clicked. I'm surprised how I managed to do it, I barely had to search for a few DOM methods. Now it's time to make it more interesting.
+
+## update 2
+now it's possible to restart the toy's screen. Screen resolution can also be adjusted.
