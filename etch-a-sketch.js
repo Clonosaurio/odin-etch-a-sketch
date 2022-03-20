@@ -1,4 +1,5 @@
 let screen = document.querySelector(".screen");
+let gridVisible = false;
 
 let size = 15;
 
@@ -43,16 +44,25 @@ function addPixelsListener(){
     });
 }
 
-let reset = document.querySelector(".reset");
-reset.addEventListener("click", () => {
+//redraw the screen, deleting anything drawn
+let btnReset = document.querySelector(".reset");
+btnReset.addEventListener("click", () => drawScreen());
+
+//change grid size and redraws it
+let btnGridSize = document.querySelector(".grid-size");
+btnGridSize.valueAsNumber = size; //sets a default value
+btnGridSize.addEventListener("click", () => {
+    size = btnGridSize.valueAsNumber;
     drawScreen()
 });
 
-let gridSize = document.querySelector(".grid-size");
-gridSize.valueAsNumber = size;
-gridSize.addEventListener("click", () => {
-    size = gridSize.valueAsNumber;
-    drawScreen()
+//toggle grid visibility
+let btnGrid = document.querySelector(".grid");
+btnGrid.addEventListener("click", () => {
+    let drawnPixels = document.querySelectorAll(".pixel");
+    drawnPixels.forEach(pixel => {
+        pixel.classList.toggle("noBorder");
+    });
 });
 
 

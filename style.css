@@ -27,6 +27,7 @@ body {
 .menu {
     display: flex;
     flex-flow: column;
+    justify-content: space-evenly;
     flex: 0 0 auto;
     border: 5px outset rgb(150, 0, 0);
     width: 100px;
@@ -46,6 +47,14 @@ body {
 .menu > button,
 .menu > input {
     margin: 10px;
+    background-color: rgb(250, 150, 150);
+    border: 4px outset rgb(200, 50, 50);
+    border-radius: 5px;
+}
+
+button {
+    height: 100px;
+    font-size: 16px;
 }
 
 a {
@@ -80,6 +89,8 @@ a {
     justify-content: stretch;
 }
 
+
+
 .column {
     display: flex;
     flex: auto;
@@ -88,13 +99,16 @@ a {
 .pixel {
     display: flex;
     flex: auto;
-    /*box-shadow: inset 0 0 1px rgb(200, 200, 100);*/
-    border: 1px solid rgb(240, 240, 240);
+    border: 1px solid rgba(240, 240, 240, 0);
     background-color: white;
 }
 
 .pixel.active {
     background-color: black;
+    /*border: 1px solid black;*/
+}
+
+.noBorder {
     border: 1px solid black;
 }
 
