@@ -48,8 +48,30 @@ reset.addEventListener("click", () => {
     drawScreen()
 });
 
-let screenSize = document.querySelector(".grid-size");
-screenSize.addEventListener("click", () => {
-    size = screenSize.valueAsNumber;
+let gridSize = document.querySelector(".grid-size");
+gridSize.valueAsNumber = size;
+gridSize.addEventListener("click", () => {
+    size = gridSize.valueAsNumber;
     drawScreen()
 });
+
+
+
+
+
+//total failure of "small" code, may save for later
+
+/*function test(tag, action, tool){
+    let element = document.querySelector(tag);
+    element.addEventListener(action, () => {
+        if(tool == "screenSize"){
+            size = element.valueAsNumber;
+            drawScreen()
+        } else if(tool == "reset"){
+            drawScreen()
+        }
+    });
+}
+
+test(".grid-size", "click", "screenSize");
+test(".reset", "click", "reset");*/
