@@ -4,6 +4,8 @@ let size = 15;
 let brushColor = "rgb(0, 0, 0)";
 let activeTool = "pencil";
 
+
+
 drawScreen()
 
 function drawScreen(){
@@ -66,10 +68,9 @@ function checkGridVisibility(){
 }
 
 /*-----menu left-----*/
+//pencil, adds colors
 let btnPencil = document.querySelector(".pencil");
-//default active color for pencil
-btnPencil.style.backgroundColor = "rgb(100, 0 , 0)";
-btnPencil.style.color = "white";
+
 
 btnPencil.addEventListener("click", () => {
     activeTool = "pencil"
@@ -79,6 +80,7 @@ btnPencil.addEventListener("click", () => {
     btnEraser.style.color = null;
 });
 
+//eraser, style added by pencil
 let btnEraser = document.querySelector(".eraser");
 btnEraser.addEventListener("click", () => {
     activeTool = "eraser";
@@ -88,7 +90,20 @@ btnEraser.addEventListener("click", () => {
     btnPencil.style.color = null;
 });
 
-let btnColorPick;
+//color picker
+let preview = document.querySelector(".preview");
+
+let rgb = document.querySelector(".rgb");
+let colorR = document.querySelector("#r");
+let colorG = document.querySelector("#g");
+let colorB = document.querySelector("#b");
+
+rgb.addEventListener("click", () => {
+    brushColor = "rgb("+colorR.valueAsNumber
+    +", "+colorG.valueAsNumber+", "
+    +colorB.valueAsNumber+")";
+    preview.style.backgroundColor = brushColor;
+});
 
 let btnRainbow;
 
@@ -123,3 +138,16 @@ btnGrid.addEventListener("click", () => {
         });
     }
 });
+
+
+/*-----settings to default-----*/
+
+//default color preview and keep color selection
+brushColor = "rgb("+colorR.valueAsNumber
+    +", "+colorG.valueAsNumber+", "
+    +colorB.valueAsNumber+")";
+    preview.style.backgroundColor = brushColor;
+
+//default active color for pencil
+btnPencil.style.backgroundColor = "rgb(100, 0 , 0)";
+btnPencil.style.color = "white";

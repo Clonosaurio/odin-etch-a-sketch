@@ -15,7 +15,7 @@ This time I'm going to make an _etch-a-sketch_, something like the good old MS-P
 # roadmap
 
 Things to do to complete this exercise:
-- ❌ color picker
+- ✅ color picker
 - ✅ a way to clear the toy's screen
 - ❌ random colors
 - ✅ screen resolution (grid size)
@@ -49,3 +49,6 @@ Now the grid visibility can be toggled. It keeps it's setting enabled or disable
 
 ## update 4
 After making minor changes to the code, not it's possible to use the _eraser_ tool. The buttons _Pencil_ and _Eraser_ are now functional, and will change it's color to show witch one is the active tool.
+
+## update 5
+Color picker now working. You choose the red, green and blue values for your pencil. There's a little preview over those values so you can see the color before using it. Refreshing the page keeps those value active, I'm not sure why, but still want to keep it this way. Happy little accident, I guess.
