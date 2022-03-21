@@ -1,5 +1,6 @@
 let screen = document.querySelector(".screen");
-let gridVisible = false;
+let gridVisible = true;
+let drawnPixels = document.querySelectorAll(".pixel");
 
 let size = 15;
 
@@ -49,12 +50,12 @@ function checkGridVisibility(){
     if(gridVisible){
         let drawnPixels = document.querySelectorAll(".pixel");
     drawnPixels.forEach(pixel => {
-        pixel.classList.add("noBorder");
+        pixel.classList.add("border");
     });
     } else {
         let drawnPixels = document.querySelectorAll(".pixel");
         drawnPixels.forEach(pixel => {
-            pixel.classList.remove("noBorder");
+            pixel.classList.remove("border");
         });
     }
 }
@@ -77,13 +78,13 @@ btnGrid.addEventListener("click", () => {
     if(gridVisible){
         let drawnPixels = document.querySelectorAll(".pixel");
     drawnPixels.forEach(pixel => {
-        pixel.classList.remove("noBorder");
+        pixel.classList.remove("border");
         gridVisible = false;
     });
     } else {
         let drawnPixels = document.querySelectorAll(".pixel");
         drawnPixels.forEach(pixel => {
-            pixel.classList.add("noBorder");
+            pixel.classList.add("border");
             gridVisible = true;
         });
     }
