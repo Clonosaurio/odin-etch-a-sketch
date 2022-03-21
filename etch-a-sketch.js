@@ -43,7 +43,7 @@ function addPixelsListener(){ //listener and click actions
     let pixel = document.querySelectorAll(".pixel");
     pixel.forEach(px => {
         px.addEventListener("mousedown", () => {
-            if(activeTool == "pencil"){
+            if(activeTool == "pencil" || activeTool == "rainbow"){
                 px.style.backgroundColor = brushColor;
                 px.style.border = `1px solid ${brushColor}`;
             }else if(activeTool == "eraser"){
@@ -67,6 +67,10 @@ function checkGridVisibility(){
     }
 }
 
+function randomColor(){
+    return Math.floor(Math.random()*256);
+}
+
 /*-----menu left-----*/
 //pencil, adds colors
 let btnPencil = document.querySelector(".pencil");
@@ -78,6 +82,8 @@ btnPencil.addEventListener("click", () => {
     btnPencil.style.color = "white";
     btnEraser.style.backgroundColor = null;
     btnEraser.style.color = null;
+    btnRainbow.style.backgroundColor = null;
+    btnRainbow.style.color = null;
 });
 
 //eraser, style added by pencil
@@ -88,6 +94,8 @@ btnEraser.addEventListener("click", () => {
     btnEraser.style.color = "white";
     btnPencil.style.backgroundColor = null;
     btnPencil.style.color = null;
+    btnRainbow.style.backgroundColor = null;
+    btnRainbow.style.color = null;
 });
 
 //color picker
@@ -105,7 +113,36 @@ rgb.addEventListener("click", () => {
     preview.style.backgroundColor = brushColor;
 });
 
-let btnRainbow;
+//rainbow color
+let btnRainbow = document.querySelector(".rainbow");
+btnRainbow.addEventListener("click", () =>{
+    activeTool = "rainbow";
+    btnRainbow.style.backgroundColor = "rgb(100, 0 , 0)";
+    btnRainbow.style.color = "white";
+    btnPencil.style.backgroundColor = null;
+    btnPencil.style.color = null;
+    btnEraser.style.backgroundColor = null;
+    btnEraser.style.color = null;
+});
+
+
+screen.addEventListener("mousemove", () => {
+    if(activeTool == "rainbow"){
+        randomizeColors()
+    }
+});
+
+function randomizeColors() {
+    let r = randomColor();
+    let g = randomColor();
+    let b = randomColor();
+
+    brushColor = "rgb("+r+", "+g+", "+b+")";
+    preview.style.backgroundColor = brushColor;
+    colorR.valueAsNumber = r;
+    colorG.valueAsNumber = g;
+    colorB.valueAsNumber = b;
+};
 
 
 /*-----menu right-----*/
