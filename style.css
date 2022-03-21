@@ -57,6 +57,7 @@ button {
     font-size: 16px;
 }
 
+
 a {
     text-decoration: none;
     margin: 20px 0 0 0;
@@ -103,10 +104,10 @@ a {
     background-color: white;
 }
 
-.pixel.active {
+/*.pixel.active {
     background-color: black;
     border: 1px solid black;
-}
+}*/
 
 .border {
     border: 1px solid gainsboro;

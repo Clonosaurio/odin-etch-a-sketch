@@ -1,8 +1,8 @@
 let screen = document.querySelector(".screen");
 let gridVisible = true;
-let drawnPixels = document.querySelectorAll(".pixel");
-
 let size = 15;
+let brushColor = "rgb(0, 0, 0)";
+let activeTool = "pencil";
 
 drawScreen()
 
@@ -37,11 +37,16 @@ function drawPixels(){
     }
 }
 
-function addPixelsListener(){
+function addPixelsListener(){ //listener and click actions
     let pixel = document.querySelectorAll(".pixel");
     pixel.forEach(px => {
         px.addEventListener("mousedown", () => {
-        px.classList.add("active");
+            if(activeTool == "pencil"){
+                px.style.backgroundColor = brushColor;
+                px.style.border = `1px solid ${brushColor}`;
+            }else if(activeTool == "eraser"){
+                px.style = null;
+            }
         })
     });
 }
@@ -60,15 +65,44 @@ function checkGridVisibility(){
     }
 }
 
+/*-----menu left-----*/
+let btnPencil = document.querySelector(".pencil");
+//default active color for pencil
+btnPencil.style.backgroundColor = "rgb(100, 0 , 0)";
+btnPencil.style.color = "white";
+
+btnPencil.addEventListener("click", () => {
+    activeTool = "pencil"
+    btnPencil.style.backgroundColor = "rgb(100, 0 , 0)";
+    btnPencil.style.color = "white";
+    btnEraser.style.backgroundColor = null;
+    btnEraser.style.color = null;
+});
+
+let btnEraser = document.querySelector(".eraser");
+btnEraser.addEventListener("click", () => {
+    activeTool = "eraser";
+    btnEraser.style.backgroundColor = "rgb(100, 0 , 0)";
+    btnEraser.style.color = "white";
+    btnPencil.style.backgroundColor = null;
+    btnPencil.style.color = null;
+});
+
+let btnColorPick;
+
+let btnRainbow;
+
+
+/*-----menu right-----*/
 //redraw the screen, deleting anything drawn
 let btnReset = document.querySelector(".reset");
 btnReset.addEventListener("click", () => drawScreen());
 
 //change grid size and redraws it
-let btnGridSize = document.querySelector(".grid-size");
-btnGridSize.valueAsNumber = size; //sets a default value
-btnGridSize.addEventListener("click", () => {
-    size = btnGridSize.valueAsNumber;
+let btnScreenRes = document.querySelector(".grid-size");
+btnScreenRes.valueAsNumber = size; //sets a default value
+btnScreenRes.addEventListener("click", () => {
+    size = btnScreenRes.valueAsNumber;
     drawScreen()
 });
 
@@ -89,25 +123,3 @@ btnGrid.addEventListener("click", () => {
         });
     }
 });
-
-
-
-
-
-
-//total failure of "small" code, may save for later
-
-/*function test(tag, action, tool){
-    let element = document.querySelector(tag);
-    element.addEventListener(action, () => {
-        if(tool == "screenSize"){
-            size = element.valueAsNumber;
-            drawScreen()
-        } else if(tool == "reset"){
-            drawScreen()
-        }
-    });
-}
-
-test(".grid-size", "click", "screenSize");
-test(".reset", "click", "reset");*/

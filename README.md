@@ -19,18 +19,21 @@ Things to do to complete this exercise:
 - ✅ a way to clear the toy's screen
 - ❌ random colors
 - ✅ screen resolution (grid size)
+- ✅ eraser tool
 
-And some personal things I want to add, but not promised:
-- ❌ `"mousedrag"` must be able to draw too
-- ❌ a filling tool
-- ❌ different brush sizes and shapes
-- ❌ a fake dynamic shadow using the mouse position on the window
-- ❌ replacing the toy's html+css with images for better performance (too much box-shadows)
-- ❌ save/load system
-- ❌ zoom levels for the screen
-- ❌ toggle button to change toy's visibility
-- ❌ frame by frame animation
-- ✅ toggle button for grid visibility
+~~And some personal things I want to add, but not promised:~~
+- ~~❌ `"mousedrag"` must be able to draw too~~
+- ~~❌ a filling tool~~
+- ~~❌ different brush sizes and shapes~~
+- ~~❌ a fake dynamic shadow using the mouse position on the window~~
+- ~~❌ replacing the toy's html+css with images for better performance (too much box-shadows)~~
+- ~~❌ save/load system~~
+- ~~❌ zoom levels for the screen~~
+- ~~❌ toggle button to change toy's visibility~~
+- ~~❌ frame by frame animation~~
+- ~~✅ toggle button for grid visibility~~
+
+I want to make a new project with all that extra stuff, something bigger, it won't be just an etch-a-sketch anymore, so I'm scratching it from the roadmap.
 
 
 # How it's going
@@ -43,3 +46,6 @@ Now it's possible to restart the toy's screen. Screen resolution can also be adj
 
 ## update 3
 Now the grid visibility can be toggled. It keeps it's setting enabled or disabled after cleaning the screen or changing resolution. This wasn't part of the roadmap, but now it is, with a check mark of complete!
+
+## update 4
+After making minor changes to the code, not it's possible to use the _eraser_ tool. The buttons _Pencil_ and _Eraser_ are now functional, and will change it's color to show witch one is the active tool.
