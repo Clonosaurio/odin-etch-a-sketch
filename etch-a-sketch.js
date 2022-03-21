@@ -117,6 +117,7 @@ rgb.addEventListener("click", () => {
 let btnRainbow = document.querySelector(".rainbow");
 btnRainbow.addEventListener("click", () =>{
     activeTool = "rainbow";
+    randomizeColors()
     btnRainbow.style.backgroundColor = "rgb(100, 0 , 0)";
     btnRainbow.style.color = "white";
     btnPencil.style.backgroundColor = null;
@@ -126,7 +127,7 @@ btnRainbow.addEventListener("click", () =>{
 });
 
 
-screen.addEventListener("mousemove", () => {
+screen.addEventListener("click", () => {
     if(activeTool == "rainbow"){
         randomizeColors()
     }
