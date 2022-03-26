@@ -10,7 +10,7 @@ This time I'm going to make an _etch-a-sketch_, something like the good old MS-P
 
 ## Live version
 
-### https://clonosaurio.github.io/odin-etch-a-sketch/
+### https://hectorvilas.github.io/odin-etch-a-sketch/
 
 # roadmap
 
